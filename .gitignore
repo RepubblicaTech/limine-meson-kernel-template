@@ -1,5 +1,5 @@
 */build
 
-kernel/subprojects/*
-!kernel/subprojects/*.wrap
-!kernel/subprojects/packagefiles
+subprojects
+!subprojects/*.wrap
+!subprojects/packagefiles
