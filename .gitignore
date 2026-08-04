@@ -1,5 +1,8 @@
-*/build
+# build files
+build
+out
 
+# Meson subprojects
 subprojects
 !subprojects/*.wrap
 !subprojects/packagefiles
