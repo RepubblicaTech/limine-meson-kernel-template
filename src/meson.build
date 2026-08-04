@@ -32,10 +32,10 @@ linker_flags = [
   '-Wl,-T,' + linker_script
 ]
 
-# automatically adds all platform-specific flags and sources.
+# adds all platform-specific flags and sources.
 subdir('arch'/target_arch)
 
-kernel_exe = executable('kernel',
+executable('kernel',
            sources,
            dependencies: [limine_proto, freestanding_hdrs],
            include_directories: includes,
