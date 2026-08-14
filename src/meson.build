@@ -35,8 +35,6 @@ linker_flags = [
 # adds all platform-specific flags and sources.
 subdir('arch'/target_arch)
 
-install_dir = meson.global_source_root()/join_paths('out', target_arch + '-' + get_option('buildtype'))
-
 executable('kernel',
            sources,
            dependencies: [limine_proto, freestanding_hdrs],
@@ -44,6 +42,4 @@ executable('kernel',
            c_args: c_args,
            nasm_args: nasm_args,
            link_args: linker_flags,
-           link_depends: 'arch'/target_arch/'linker.ld',
-           install: true,
-           install_dir: install_dir)
+           link_depends: 'arch'/target_arch/'linker.ld')

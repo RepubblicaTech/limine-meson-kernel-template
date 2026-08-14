@@ -1,6 +1,5 @@
 # build files
 build
-out
 
 # Meson subprojects
 subprojects
