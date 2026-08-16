@@ -15,7 +15,8 @@ c_args = [
 ]
 
 nasm_args = [
-  '-F dwarf'
+  '-F dwarf',
+  '-Wall'
 ]
 
 sources = [
