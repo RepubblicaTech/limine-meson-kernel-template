@@ -4,6 +4,7 @@ project('limine-meson',
         meson_version: '>= 1.1')
 
 fs = import('fs')
+cc = meson.get_compiler('c')
 
 target_arch = get_option('target')
 includes = include_directories('include/arch' / target_arch)

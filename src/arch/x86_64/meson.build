@@ -4,6 +4,10 @@ arch_sources = [
 
 sources += arch_sources
 
+if (not cc.has_argument('-march=x86-64'))
+  error('C Compiler does not support x86_64 (x86-64) target!')
+endif
+
 c_args += [
   '-m64',
   '-march=x86-64',

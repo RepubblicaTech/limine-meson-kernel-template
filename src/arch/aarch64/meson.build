@@ -4,9 +4,13 @@ arch_sources = [
 
 sources += arch_sources
 
+if (not cc.has_argument('-march=armv8-a+nofp+nosimd'))
+  error('C Compiler does not support aarch64 (armv8-a+nofp+nosimd) target!')
+endif
+
 c_args += [
-  '-mtune=generic',
   '-march=armv8-a+nofp+nosimd',
+  '-mtune=generic',
   '-mgeneral-regs-only'
 ]
 
