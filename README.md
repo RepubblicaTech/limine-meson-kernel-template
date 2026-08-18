@@ -24,4 +24,4 @@ ninja
 
 - If you want to cross-compile for another platform, use [cross files](https://mesonbuild.com/Cross-compilation.html) and a cross-compiler (obviously). `host_machine.cpu_family()` is used as the target architecture
 - x86_64 code is assembled with `nasm`. Other platforms will be assembled with `gcc`
-- Common arch headers can go in `include/arch/common`.
+- Common arch headers can go in `include/arch/common`, which is useful for functions that need to be implemented by all architectures (e.g. `_hcf`).
