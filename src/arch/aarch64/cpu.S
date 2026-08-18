@@ -1,5 +1,3 @@
-#include "cpu.h"
-
 .section ".text"
 
 .global _hcf
