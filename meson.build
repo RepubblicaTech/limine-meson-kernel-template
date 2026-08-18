@@ -1,5 +1,5 @@
 project('limine-meson',
-        'c', 'nasm',
+        'c',
         version: '0.1',
         meson_version: '>= 1.1')
 
@@ -7,7 +7,7 @@ fs = import('fs')
 cc = meson.get_compiler('c')
 
 target_arch = get_option('target')
-includes = include_directories('include/arch' / target_arch)
+archcommon_inc = include_directories('include/arch/common')
 
 summary('Build target', target_arch, section: 'Build information')
 

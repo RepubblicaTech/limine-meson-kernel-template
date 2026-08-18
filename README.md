@@ -19,3 +19,8 @@ meson compile -C build
 cd build
 ninja
 ```
+
+# A few notes for users of the template
+
+- x86_64 code is assembled with `nasm`. Other platforms will be assembled with `gcc`
+- Common arch headers can go in `include/arch/common`.

@@ -1,5 +1,5 @@
 arch_sources = [
-  'arch/aarch64/cpu.asm'
+  'arch/aarch64/cpu.S'
 ]
 
 sources += arch_sources

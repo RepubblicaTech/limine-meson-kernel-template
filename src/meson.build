@@ -14,11 +14,6 @@ c_args = [
   '-MP'
 ]
 
-nasm_args = [
-  '-F dwarf',
-  '-Wall'
-]
-
 sources = [
   'kernel/kernel.c'
 ]
@@ -36,11 +31,21 @@ linker_flags = [
 # adds all platform-specific flags and sources.
 subdir('arch'/target_arch)
 
-executable('kernel',
-           sources,
-           dependencies: [limine_proto, freestanding_hdrs],
-           include_directories: includes,
-           c_args: c_args,
-           nasm_args: nasm_args,
-           link_args: linker_flags,
-           link_depends: 'arch'/target_arch/'linker.ld')
+if (target_arch == 'x86_64' )
+  executable('kernel',
+            sources,
+            dependencies: [limine_proto, freestanding_hdrs],
+            include_directories: archcommon_inc,
+            c_args: c_args,
+            nasm_args: nasm_args,
+            link_args: linker_flags,
+            link_depends: 'arch'/target_arch/'linker.ld')
+else
+  executable('kernel',
+            sources,
+            dependencies: [limine_proto, freestanding_hdrs],
+            include_directories: archcommon_inc,
+            c_args: c_args,
+            link_args: linker_flags,
+            link_depends: 'arch'/target_arch/'linker.ld')
+endif

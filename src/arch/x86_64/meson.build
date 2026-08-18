@@ -1,3 +1,5 @@
+add_languages('nasm')
+
 arch_sources = [
   'arch/x86_64/cpu.asm'
 ]
@@ -7,6 +9,14 @@ sources += arch_sources
 if (not cc.has_argument('-march=x86-64'))
   error('C Compiler does not support x86_64 (x86-64) target!')
 endif
+
+nasm_args = [
+  '-F',
+  'dwarf',
+  '-Wall',
+  '-f',
+  'elf64'
+]
 
 c_args += [
   '-m64',
@@ -22,8 +32,4 @@ c_args += [
 
 linker_flags += [
   '-Wl,-melf_x86_64'
-]
-
-nasm_args += [
-  '-f elf64'
 ]
