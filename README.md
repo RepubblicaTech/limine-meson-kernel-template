@@ -22,5 +22,6 @@ ninja
 
 # A few notes for users of the template
 
+- If you want to cross-compile for another platform, use [cross files](https://mesonbuild.com/Cross-compilation.html) and a cross-compiler (obviously). `host_machine.cpu_family()` is used as the target architecture
 - x86_64 code is assembled with `nasm`. Other platforms will be assembled with `gcc`
 - Common arch headers can go in `include/arch/common`.

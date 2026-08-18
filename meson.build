@@ -6,7 +6,7 @@ project('limine-meson',
 fs = import('fs')
 cc = meson.get_compiler('c')
 
-target_arch = get_option('target')
+target_arch = host_machine.cpu_family()
 archcommon_inc = include_directories('include/arch/common')
 
 summary('Build target', target_arch, section: 'Build information')

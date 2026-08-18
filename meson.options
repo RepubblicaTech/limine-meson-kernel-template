@@ -1,3 +1,0 @@
-option('target', type : 'combo',
-       choices : ['x86_64', 'i386', 'aarch64', 'riscv64', 'loongarch64'], value : 'x86_64',
-       description: 'Build target architecture. Use only architectures supported by Limine.')
