@@ -3,7 +3,6 @@ project('limine-meson',
         version: '0.1',
         meson_version: '>= 1.1')
 
-fs = import('fs')
 cc = meson.get_compiler('c')
 
 target_arch = host_machine.cpu_family()
